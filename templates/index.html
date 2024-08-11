@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michelada Recipes</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #d3d3d3;}
         h1 { text-align: center; }
         .recipe { cursor: pointer; padding: 10px; border: 1px solid #ccc; margin: 10px 0; }
         .recipe img { max-width: 100%; }
@@ -14,10 +14,10 @@
 <body>
     <h1>Choose a michelada recipe</h1>
     <div id="recipes">
+        <img src="{{ url_for('static', filename='michelada_main.jpg') }}" alt="{{ name }}">
         {% for name, recipe in recipes.items() %}
             <div class="recipe" onclick="loadRecipe('{{ name }}')">
                 <h2>{{ name }}</h2>
-                <img src="{{ url_for('static', filename=name.lower() + '.jpg') }}" alt="{{ name }}">
             </div>
         {% endfor %}
     </div>
