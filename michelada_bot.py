@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='assets')
 
-# Определяем рецепты
 recipes = {
     "Classic": {
         "description": "The classic michelada is a traditional Mexican cocktail based on beer, lime and Worcestershire sauce.",
